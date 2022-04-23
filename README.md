@@ -1,6 +1,5 @@
-# Neural_Network_Charity_Analysis
+# Neural Network CharityAnalysis
 Module 19 challenge prepared by Hannah Wikum - April 2022
-
 ___
 ## Resources
 Data Source: charity_data.csv (provided)
@@ -38,9 +37,9 @@ _Compiling, Training, and Evaluating the Model_
  
  * **Activation Functions** - My first model used ReLU functions in the two hidden layers and a sigmoid activation in the output layer. I tested with only using sigmoid functions in the hidden layers and output to try to improve the accuracy because the sigmoid model is ideal for binary classification. (The target variable of successful/unsuccessful is a binary outcome.)
 
-_Testing to Improve the Model_
-* To try to improve accuracy score above 75%, I tried three different scenarious:
-  1. In the first attempt, I focused on pre-processing. I dropped the STATUS and SPECIAL_CONSIDERATIONS columns during the pre-processing stage to try to reduce noise and reran everything else in the model the same as the original model. The model accuracy was 0.7250, which was higher than the original 0.7228, but did not meet the 75% goal.
+_Testing to Improve the Model to over 75% Accuracy_
+
+ 1. In the first attempt, I focused on pre-processing. I dropped the STATUS and SPECIAL_CONSIDERATIONS columns during the pre-processing stage to try to reduce noise and reran everything else in the model the same as the original model. The model accuracy was 0.7250, which was higher than the original 0.7228, but did not meet the 75% goal.
 
   _Test 1 Results: Drop Extra Columns_
   
@@ -48,15 +47,16 @@ _Testing to Improve the Model_
   
  2. My second attempt involved building off the first test with dropping two extra columns, plus adding a third hidden layer, and changing the activation function in all hidden layers from ReLU to sigmoid. This model had an accuracy score of 0.7280, which was improvement from the first test and original model, but still not above the 75% hurdle.
 
- _Test 2 Results: Drop Extra Columns, Add a Layer, and Change Activation Functions_
+  _Test 2 Results: Drop Extra Columns, Add a Layer, and Change Activation Functions_
 
- ![image](https://user-images.githubusercontent.com/93058069/164945699-bd52890c-f9b5-41e8-aaaa-f5582eba1883.png)
+  ![image](https://user-images.githubusercontent.com/93058069/164945699-bd52890c-f9b5-41e8-aaaa-f5582eba1883.png)
 
- 3. My third attempt involved dropping the extra columns from the first test, increasing the number of neurons in the three layers from the second test, and then increasing the number of epochs from 50 to 60. Instead of using 80 neurons in the first layer (approximately 2x more than the number of input variables), I increased it to 120 (3x more) to be on the higher end of the rule of thumb.
+ 3. My third attempt involved dropping the extra columns from the first test, increasing the number of neurons in the three layers from the second test, and then increasing the number of epochs from 50 to 100. Instead of using 80 neurons in the first layer (approximately 2x more than the number of input variables), I increased it to 120 (3x more) to be on the higher end of the rule of thumb. I also upped the neurons in the second layer from 30 to 50 and third layer from 10 to 20. I kept the third layer from the second test and also continued to use sigmoid activation function for all hidden and output layers. The accuracy results were 0.7269, which is actually worse than my second attempt.
 
- _Test 3 Results: Drop Extra Columns, Add a Layer, Change Activation Function, Increase the Number of Neurons, and Use More Epochs _
+  _Test 3 Results: Drop Extra Columns, Add a Layer, Change Activation Function, Increase the Number of Neurons, and Use More Epochs_
  
- 
-__
+  ![image](https://user-images.githubusercontent.com/93058069/164946031-080f15a9-d692-470b-a01d-6e48dcf819eb.png)
 
-
+___
+## Summary
+In conclusion, the best model I created could predict whether an application would be successful with 72.8% accuracy. Although this is not a medical prediction that would require a very high accuracy rate, it would still be good to most effectively distribute money to charitable causes if the accuracy was higher. As an alternative, I would recommend using a logistic regression model, which is a supervised machine learning model. The reason I am suggesting a logistic regression is because we are trying to determine a binary classification where the target variable (success) is known. In addition, neural networks can be overcomplicated or overfit to the training data, which is less of a risk with the logistic regression model.
