@@ -1,4 +1,4 @@
-# Neural Network CharityAnalysis
+# Neural Network Charity Analysis
 Module 19 challenge prepared by Hannah Wikum - April 2022
 ___
 ## Resources
